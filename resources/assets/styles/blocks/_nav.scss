@@ -1,0 +1,92 @@
+.nav {
+  $root: &;
+
+  position: fixed;
+  width: 0;
+  height: 100vh;
+  background: $light;
+  z-index: 10;
+  overflow: hidden;
+  transition: $transition ease-out;
+  opacity: 1;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include mediaTo(lg) {
+      margin: 0 gutter(2);
+    }
+
+    @include mediaTo(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__bg {
+    @extend %absolute;
+    @extend %image;
+
+    opacity: 0.1;
+    transition: $transition*2 ease-out;
+  }
+
+  .contact-header {
+    opacity: 0;
+    transition: $transition opacity;
+
+    @include mediaTo(lg) {
+      display: none;
+    }
+  }
+
+  .menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    transition: $transition opacity;
+
+    @include mediaTo(sm) {
+      align-items: center;
+    }
+
+    li {
+      @extend .subtitle;
+      @extend %special;
+
+      margin-bottom: gutter(2);
+      text-transform: uppercase;
+      color: $dark;
+
+      &:hover {
+        color: $gray;
+      }
+
+      &.current-menu-item {
+        color: $special;
+      }
+    }
+  }
+
+  &.-is-active {
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+
+    #{$root}__bg {
+      opacity: 0.4;
+    }
+
+    .menu,
+    .contact-header {
+      opacity: 1;
+      transition: $transition * 4 opacity;
+    }
+  }
+}

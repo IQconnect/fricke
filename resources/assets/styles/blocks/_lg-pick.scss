@@ -1,0 +1,93 @@
+/* stylelint-disable */
+.lg-pick {
+  $root: &;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: gutter(4);
+  background-color: $special;
+  color: $light;
+  fill: $light;
+  overflow: hidden;
+  transition: $transition ease-in;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+
+  &__item,
+  li {
+    opacity: 0;
+    height: gutter(4);
+    border-top: 1px solid;
+    transition: $transition ease-in;
+    padding: $gutter 0;
+
+    svg {
+      margin-left: gutter(0.8);
+      transition: $transition ease-in;
+      fill: $light;
+    }
+
+    &.-is-active,
+    &.current-lang {
+      opacity: 1;
+      border-top: 0;
+      order: -1;
+      a {
+        &::after {
+          content: url("../images/dropdown.svg");
+          position: relative;
+          top: gutter(-0.2);
+          margin-left: gutter(0.8);
+          transition: $transition ease-in;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $dark;
+
+      &.-is-active,
+      &.current-lang {
+        background-color: $special;
+      }
+    }
+  }
+
+  &__wrapper,
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: gutter(1);
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &:hover {
+    max-height: gutter(20);
+
+    #{$root}__item,
+    li {
+      opacity: 1;
+
+      &.-is-active,
+      &.current-lang {
+        height: gutter(5.2);
+      }
+    }
+
+    #{$root}__wrapper,
+    a {
+      svg,
+      &::after {
+        transform: rotate(180deg);
+        top: gutter(0.4) !important;
+      }
+    }
+  }
+}

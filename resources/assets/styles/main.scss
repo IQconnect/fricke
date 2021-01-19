@@ -1,0 +1,70 @@
+@import "common/variables";
+
+/** Vendors */
+@import "../../../node_modules/tooltipster/dist/css/tooltipster.bundle.min.css";
+@import "vendors/scss-lock/css-lock";
+@import "vendors/fonts";
+@import "vendors/flickity";
+@import "~aos/src/sass/aos.scss";
+
+/** Common */
+
+@import "common/mixins";
+@import "common/functions";
+@import "common/extends";
+
+/** Import everything from autoload */
+
+// @import "./autoload/**/*";
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+
+// @import "~some-node-module";
+
+/** Import theme styles */
+
+@import "common/global";
+
+/** Components */
+@import "components/container";
+@import "components/text";
+@import "components/button";
+@import "components/section";
+
+/** Blocks */
+@import "blocks/hamburger";
+@import "blocks/lg-pick";
+@import "blocks/nav";
+@import "blocks/contact-header";
+@import "blocks/table";
+@import "blocks/team";
+@import "blocks/list";
+@import "blocks/gallery-box";
+@import "blocks/breadcramps";
+
+/** Layouts */
+@import "layouts/header";
+@import "layouts/hero";
+@import "layouts/tabs";
+@import "layouts/realizations";
+@import "layouts/flex";
+@import "layouts/footer";
+@import "layouts/map";
+@import "layouts/small-hero";
+@import "layouts/content";
+@import "layouts/cats";
+@import "layouts/products";
+@import "layouts/product";
+@import "layouts/projects";
+@import "layouts/gallery";
+@import "layouts/contact";
+@import "layouts/files";
+@import "layouts/raports";
+@import "layouts/s-realization";
+
+/** Pages */

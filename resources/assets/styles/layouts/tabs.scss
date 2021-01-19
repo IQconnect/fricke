@@ -1,0 +1,155 @@
+.tabs {
+  @include mediaTo(sm) {
+    padding: 0;
+  }
+
+  .container {
+    @include mediaTo(sm) {
+      padding: 0;
+    }
+  }
+
+  &__header {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(10))
+    );
+
+    display: flex;
+    justify-content: center;
+
+    @include mediaTo(sm) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  &__button {
+    @extend .major-text;
+    @extend %special;
+
+    margin: 0 gutter(0.2);
+    // background: none;
+    // border: 0;
+    // border-bottom: gutter(0.2) solid;
+    // text-transform: uppercase;
+    // padding: gutter(1.5);
+    // color: $gray;
+    // cursor: pointer;
+    // outline: 0 !important;
+
+    &:hover {
+      color: $special;
+      opacity: 0.9;
+    }
+
+    &.-is-active {
+      color: $special;
+      background-color: $light;
+    }
+  }
+
+  &__content-wrapper {
+    width: 100%;
+    position: relative;
+    min-height: gutter(50);
+
+    @include mediaTo(md) {
+      height: 80vh;
+    }
+
+    @include mediaTo(sm) {
+      height: auto;
+    }
+  }
+
+  &__content {
+    opacity: 1;
+    display: none;
+    height: 100%;
+    gap: gutter(3);
+    transition: $transition ease-out;
+
+    & > div {
+      margin: gutter(6) 0;
+    }
+
+    @include mediaTo(md) {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+    }
+
+    @include mediaTo(sm) {
+      @include cssLock("padding", 360, 1920, (gutter_num(3), gutter_num(6)));
+
+      position: relative;
+      opacity: 1;
+      width: 100vw;
+      height: auto;
+    }
+
+    &.-is-active {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      z-index: 1;
+      transition: $transition * 4 ease-out;
+    }
+  }
+
+  &__title {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(1.6), gutter_num(3.2))
+    );
+
+    color: $special-dark;
+    font-weight: 800;
+  }
+
+  &__text {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2.4), gutter_num(3.2))
+    );
+
+    font-weight: 500;
+  }
+
+  &__wrapimg {
+    width: 100%;
+  }
+
+  &__img {
+    @extend %image;
+
+    object-fit: contain;
+
+    @include mediaTo(sm) {
+      max-height: gutter(20);
+      margin-bottom: gutter(3);
+    }
+  }
+
+  .flickity-viewport {
+    transition: height $transition ease-out;
+  }
+
+  .flickity-page-dots {
+    .dot {
+      background-color: $dark;
+    }
+  }
+}
