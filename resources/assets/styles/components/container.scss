@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 0;
   padding-bottom: 0;
-  max-width: gutter(138);
+  max-width: gutter(175);
   margin: 0 auto;
 
   @include mediaTo(xl) {
@@ -26,5 +26,9 @@
 
     width: 100%;
     max-width: 100%;
+  }
+
+  &--slim {
+    max-width: gutter(138);
   }
 }

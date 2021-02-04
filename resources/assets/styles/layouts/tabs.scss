@@ -14,7 +14,7 @@
       "margin-bottom",
       360,
       1920,
-      (gutter_num(3), gutter_num(10))
+      (gutter_num(3), gutter_num(6))
     );
 
     display: flex;
@@ -33,7 +33,7 @@
   }
 
   &__button {
-    @extend .major-text;
+    @extend .small-title;
     @extend %special;
 
     margin: 0 gutter(0.2);
@@ -60,7 +60,7 @@
   &__content-wrapper {
     width: 100%;
     position: relative;
-    min-height: gutter(50);
+    min-height: gutter(70);
 
     @include mediaTo(md) {
       height: 80vh;
@@ -72,14 +72,15 @@
   }
 
   &__content {
-    opacity: 1;
-    display: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
     height: 100%;
-    gap: gutter(3);
+    gap: gutter(2);
     transition: $transition ease-out;
 
     & > div {
-      margin: gutter(6) 0;
+      margin: gutter(3) 0;
     }
 
     @include mediaTo(md) {
@@ -98,8 +99,10 @@
     }
 
     &.-is-active {
+      visibility: visible;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto auto;
+      opacity: 1;
       z-index: 1;
       transition: $transition * 4 ease-out;
     }
@@ -129,7 +132,8 @@
   }
 
   &__wrapimg {
-    width: 100%;
+    height: gutter(80);
+    width: gutter(90);
   }
 
   &__img {

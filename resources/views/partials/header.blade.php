@@ -30,11 +30,12 @@ $result = pll_home_url($lang);
         </p>
       </div> --}}
       <div class="header__extras">
-        @include('blocks.lg-pick')
+        {{-- @include('blocks.lg-pick') --}}
+        @include('blocks.icon')
         @include('blocks.hamburger')
       </div>
       <nav class="header__nav nav" data-menu>
-        {!! image($header_img, 'full', 'nav__bg') !!}
+          {!! image($header_img, 'full', 'nav__img') !!}
         <div class="container">
           @if (has_nav_menu('primary_navigation'))
             {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu']) !!}

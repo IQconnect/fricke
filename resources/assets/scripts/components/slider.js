@@ -2,7 +2,7 @@ var Flickity = require('flickity');
 
 const CONFIG = {
     ELEM: '.rooms__wrapper',
-    CELL: '.rooms__col',
+    CELL: '.room__item',
 };
 
 const Slider = {
@@ -23,12 +23,12 @@ const Slider = {
             console.log(element);
             const slider = new Flickity(element, {
                 pageDots: false,
-                prevNextButtons: false,
+                prevNextButtons: true,
                 cellSelector: CELL,
                 autoPlay: false,
                 wrapAround: true,
             });
-            
+
             console.log(slider);
             this.sliders.push(slider);
         });

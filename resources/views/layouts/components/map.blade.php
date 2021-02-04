@@ -3,7 +3,7 @@
   $pinsArray = [];
 
   foreach ($pins as $pin) {
-      $pinObject = '';
+      $pinObject = new stdClass();
       $pinObject->pin = $pin['pin'];
       $pinObject->content = $pin['tooltip'];
       $pinObject->icon = $pin['icon']['url'];

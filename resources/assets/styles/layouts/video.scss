@@ -1,0 +1,66 @@
+.video {
+  $root: &;
+
+  position: relative;
+
+  &__wrapcarousel {
+    @include cssLock("height", 360, 1750, (250, 600));
+  }
+
+  &__cell {
+    @include cssLock("height", 360, 1750, (250, 600));
+
+    background-color: $light;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+
+    &:hover {
+      #{$root}__bg {
+        opacity: 0.6;
+      }
+
+      #{$root}__play {
+        margin-top: -10px;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__wrapper {
+    height: 600px;
+    width: 300%;
+  }
+
+  &__bgwrapper {
+    @include cssLock("height", 360, 1750, (250, 600));
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: $transition;
+    position: relative;
+  }
+
+  &__play {
+    @include cssLock("height", 360, 1750, (60, 100));
+    @include cssLock("width", 360, 1750, (60, 100));
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: $transition;
+  }
+
+  .flickity-button-icon {
+    fill: $special !important;
+  }
+
+  .flickity-button:focus {
+    box-shadow: 0 0 0 5px $special !important;
+  }
+}

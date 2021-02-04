@@ -23,12 +23,13 @@
     }
   }
 
-  &__bg {
+  &__img {
     @extend %absolute;
     @extend %image;
 
     opacity: 0.1;
-    transition: $transition*2 ease-out;
+    height: 50%;
+    transition: $transition * 2 ease-out;
   }
 
   .contact-header {

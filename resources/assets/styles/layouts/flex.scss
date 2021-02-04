@@ -1,24 +1,32 @@
 .flex {
+  $root: &;
+
   &__content-wrapper {
     width: 100%;
     position: relative;
   }
 
   &__content {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(3), gutter_num(6)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(6))
+    );
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
     gap: gutter(8);
     transition: $transition * 2 ease-out;
+    align-items: center;
 
     @include mediaTo(md) {
       grid-template-columns: 1fr;
       gap: 0;
     }
 
-    & > div {
+    &__wrappertext {
       margin: gutter(6) 0;
 
       @include mediaTo(md) {
@@ -27,11 +35,11 @@
     }
 
     &--left {
-      img {
+      #{$root}__wrapperimg {
         order: 1;
       }
 
-      & > div {
+      #{$root}__wrappertext {
         order: 2;
       }
     }
@@ -45,8 +53,9 @@
       (gutter_num(1.6), gutter_num(3.2))
     );
 
-    text-transform: uppercase;
-    color: $dark;
+    text-transform: capitalize;
+    font-weight: 800;
+    color: $special-dark;
   }
 
   &__text {
@@ -65,6 +74,10 @@
       order: 1;
       height: auto;
     }
+  }
+
+  &__wrapperimg {
+    width: 500px;
   }
 
   .flickity-viewport {

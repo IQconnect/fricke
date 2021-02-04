@@ -1,119 +1,123 @@
 .footer {
-  &__wrapper {
-    &:first-child {
-      @include cssLock(
-        "padding-top",
-        360,
-        1920,
-        (gutter_num(5), gutter_num(10))
-      );
-      @include cssLock(
-        "padding-bottom",
-        360,
-        1920,
-        (gutter_num(5), gutter_num(10))
-      );
+  background-color: $dark;
+  color: rgba($light, 0.8);
+  display: flex;
+  flex-wrap: wrap;
 
-      background-color: $special-dark;
+  &__logo {
+    background-color: $light;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mediaTo("lg") {
+      display: none;
     }
 
-    &:last-child {
-      padding: gutter(2) 0;
-      background-color: darken($special-dark, 10%);
+    img {
+      height: gutter(15);
+      width: auto;
+    }
+  }
+
+  &__content {
+    padding: gutter(4) gutter(10) gutter(5);
+    width: 75%;
+
+    @include mediaTo("lg") {
+      width: 100%;
+    }
+
+    @include mediaTo("md") {
+      padding: gutter(5) gutter(3);
     }
   }
 
   &__row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: gutter(3);
-    margin-bottom: gutter(3.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 
-    @include mediaTo(md) {
-      grid-template-columns: repeat(1, 1fr);
+    @include mediaTo("md") {
       text-align: center;
+      justify-content: center;
     }
 
-    &--copyright {
-      display: flex;
-      justify-content: space-between;
+    &--bottom {
       align-items: center;
-      margin-bottom: 0;
+      margin-top: gutter(5);
 
-      @include mediaTo(md) {
-        flex-direction: column;
+      @include mediaTo("lg") {
+        margin-top: gutter(3);
       }
     }
   }
 
-  &__title {
-    font-weight: 700;
-    color: $light;
-    text-transform: uppercase;
-    letter-spacing: gutter(0.4);
-    margin-bottom: gutter(3.2);
-  }
+  &__col {
+    @extend .text;
 
-  p,
-  li {
-    @extend .small-title;
-
-    font-weight: 700;
-    color: $gray;
-    letter-spacing: gutter(0.3);
-    line-height: gutter(3.2);
-    margin-bottom: gutter(3.2);
-    text-transform: uppercase;
-
-    a:hover {
-      color: $light;
-    }
-  }
-
-  li {
-    margin-bottom: 0;
-  }
-
-  ul {
-    margin: gutter(5) 0 0;
-    list-style: none;
-    padding: 0;
-
-    @include mediaTo(md) {
-      margin-top: 0;
-    }
-  }
-
-  &__list {
-    margin: gutter(5) gutter(-0.4) 0;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    font-weight: 500;
+    line-height: 1.1;
+  }
 
-    @include mediaTo(md) {
-      margin: 0 auto !important;
-      justify-content: center;
-      max-width: gutter(60);
+  &__nav {
+    list-style-type: none;
+
+    @include mediaTo("md") {
+      display: none;
+    }
+
+    li {
+      margin: gutter(0.25) 0;
     }
   }
 
-  &__item {
-    padding: gutter(0.4);
+  &__maintitle {
+    @extend .subtitle;
+
+    color: $light;
+    font-weight: 500;
+    margin-bottom: gutter(6);
   }
 
-  &__logo {
-    margin-bottom: gutter(1);
+  &__title {
+    @extend .major-text;
+
+    color: $light;
+    font-weight: 600;
+    margin-bottom: gutter(2);
+  }
+
+  &__link {
+    color: rgba($light, 0.8);
+
+    &:hover {
+      color: $special;
+    }
+  }
+
+  &__icon {
+    margin: gutter(2);
+  }
+
+  &__block {
+    margin-bottom: gutter(3);
   }
 
   &__copyright {
-    margin-bottom: 0 !important;
-  }
+    @extend .small-title;
 
-  &__by {
-    margin-bottom: 0;
+    opacity: 0.3;
 
-    @include mediaTo(md) {
-      margin-top: gutter(3);
+    @include mediaTo("lg") {
+      margin-bottom: gutter(3);
+      width: 100%;
     }
   }
 }

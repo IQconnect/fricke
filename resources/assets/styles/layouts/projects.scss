@@ -24,29 +24,26 @@
     &:hover {
       box-shadow: 0 gutter(0.8) gutter(1) rgba($dark, 0.3);
 
-      #{$root}__img-wrapper {
-        padding-top: 55%;
-      }
+      // #{$root}__img-wrapper {
+      //   padding-top: 55%;
+      // }
 
       #{$root}__img {
-        width: 120%;
-        object-position: 100%;
+        transform: scale(1.2);
       }
     }
   }
 
   &__img-wrapper {
     position: relative;
-    padding-top: 60%;
     transition: $transition ease-out;
     overflow: hidden;
   }
 
   &__img {
     @extend %image;
-    @extend %absolute;
 
-    transition: $transition ease-out !important;
+    transition: 0.5s ease-out !important;
   }
 
   &__title {

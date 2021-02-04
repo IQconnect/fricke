@@ -12,6 +12,7 @@ $builder
             ->addLayout(get_field_partial('components.hero'))
             ->addLayout(get_field_partial('components.small-hero'))
             ->addLayout(get_field_partial('components.tabs'))
+            ->addLayout(get_field_partial('components.video'))
             ->addLayout(get_field_partial('components.flex'))
             ->addLayout(get_field_partial('components.news'))
             ->addLayout(get_field_partial('components.product'))

@@ -1,20 +1,20 @@
 @php
-  $realizations = $data['news'];
+  $news = $data['news'];
 @endphp
 
-@if($realizations)
-  <section class="realizations">
-    <header class="realizations__header">
-      <h2 class="realizations__title subtitle">
+@if($news)
+  <section class="news">
+    <header class="news__header">
+      <h2 class="news__title subtitle">
         {{ pll_e('Aktualności')}}
             </h2>
-      <a class="realizations__btn button button--transparent button--red"
+      <a class="news__btn button button--transparent button--red"
         href="{{ get_post_type_archive_link( 'posts' ) }}">
         {{ pll_e('Zobacz wszystkie')}}
       </a>
     </header>
-    <ul class="realizations__list">
-      @foreach($realizations as $item)
+    <div class="news-carousel">
+      @foreach($news as $item)
         @php
           $id = $item->ID;
           $permalink = get_permalink($id);
@@ -23,24 +23,23 @@
           $title = $item->post_title;
           $excerpt = $item->post_excerpt;
         @endphp
-
-        <li class="realizations__item">
-          <a href="{{ $permalink }}">
-            {!! image($img, 'realization', 'realizations__img') !!}
-            <div class="realizations__content">
-              <span class="realizations__count major-text">
+      <div class="news__cell">
+          <a class="news__cellcontent" href="{{ $permalink }}">
+              {!! image($img, 'realization', 'news__img') !!}
+            <div class="news__content">
+              <span class="news__count major-text">
                 {{ $loop->index + 1 }}
               </span>
-              <h3 class="realizations__name major-text">
+              <h3 class="news__name major-text">
                 {{ $title }}
               </h3>
-              <p class="realizations__text text">
+              <p class="news__text text">
                 {{ $excerpt }}
               </p>
             </div>
           </a>
-        </li>
+        </div>
       @endforeach
-    </ul>
+    </div>
   </section>
 @endif

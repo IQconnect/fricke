@@ -1,6 +1,6 @@
-@extends('layouts.posted')
+@extends('layouts.app')
 
-  @section('news')
+  @section('content')
 
   @php $sections = get_field('components') @endphp
 
@@ -10,4 +10,5 @@
         @include('layouts.components.' . $sectionName, ['data'=>$section])
     @endforeach
   @endif
+
 @endsection

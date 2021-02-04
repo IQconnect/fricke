@@ -1,0 +1,31 @@
+.icon {
+  $root: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__yt {
+    font-size: gutter(2.5);
+  }
+
+  &__fb {
+    font-size: gutter(2.5);
+  }
+
+  &__iwrapper {
+    background: rgba($light, 0.4);
+
+    i {
+      color: $dark;
+      margin: gutter(0.75) gutter(1);
+      transition: $transition;
+    }
+
+    &:hover {
+      i {
+        color: $special;
+      }
+    }
+  }
+}

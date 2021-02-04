@@ -2,7 +2,7 @@
   <div class="container">
     <div class="contact__wrapper">
       <div class="contact__form">
-        {!! do_shortcode( '[contact-form-7 id="126" title="Formularz 1"]') !!}
+        {!! do_shortcode( '[wpforms id="109" title="false"]') !!}
       </div>
       <div class="contact__info">
         <h3 class="contact__title major-text">
@@ -21,4 +21,4 @@
   </div>
 </section>
 
-@include('components.team')
+{{-- @include('components.team') --}}

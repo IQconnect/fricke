@@ -15,12 +15,15 @@ import './autoload/**/*';
 import hamburger from './components/hamburger';
 // import hero from './components/hero';
 import tabs from './components/tabs';
-import TabsSlider from './components/tabs-slider';
-import realizations from './components/realizations';
+//import TabsSlider from './components/tabs-slider';
+//import realizations from './components/realizations';
 import gmap from './components/gmap';
 import cats from './components/cats';
 import checkbox from './components/checkbox';
 import header from './components/header';
+//import slider from './components/slider';
+import newsslider from './components/news-slider';
+import videoslider from './components/video-slider';
 import preloader from './components/preloader';
 import raports from './components/raports';
 //import countDate from './components/count-date';
@@ -42,14 +45,13 @@ $(document).ready(function () {
  // hero.init();
   //hero.resize();
   tabs.init();
-  TabsSlider.init();
-  realizations.init();
-  console.log('resize');
+  //TabsSlider.init();
+  //realizations.init();
   gmap.init();
   cats.init();
+  //slider.init();
   checkbox.init();
   header.init();
-  window.dispatchEvent(new Event('resize'));
   raports.init();
   //countDate.init();
   preloader.init();
@@ -57,4 +59,13 @@ $(document).ready(function () {
   // window.addEventListener('scroll', () => {
   //   skrollr.init();
   // });
+
+  if($('.news-carousel').length) {
+    newsslider.init();
+  }
+
+
+  if($('.video-carousel').length) {
+    videoslider.init();
+  }
 });

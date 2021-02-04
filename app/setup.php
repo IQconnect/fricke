@@ -56,6 +56,10 @@ add_action('after_setup_theme', function () {
         'footer_two' => __('Footer Two', 'sage')
     ]);
 
+    register_nav_menus([
+        'footer_three' => __('Footer Three', 'sage')
+    ]);
+
     /**
      * Enable post thumbnails
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/

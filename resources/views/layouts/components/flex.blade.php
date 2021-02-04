@@ -5,7 +5,7 @@
 
 @if($flex)
 <section class="section flex">
-    <div class="container">
+    <div class="container container--slim">
         <div class="flex__content-wrapper" data-flex-content={{ $index }}>
             @foreach ($flex as $tab)
             @php
@@ -16,19 +16,21 @@
                 $img = $tab['img']['ID'];
             @endphp
             <div class="flex__content flex__content--{{ $position }} @if($loop->first) -is-active @endif" data-tab-content>
-                <div>
-                    <h3 class="flex__title subtitle">
+                <div class="flex__wrappertext">
+                    <h3 class="flex__title title">
                         {!! $title !!}
                     </h3>
                     <p class="flex__text text">
                         {!! $text !!}
                     </p>
                     @if ($link)
-                    <a class="flex__link button button--transparent button--red" href="{{ $link['url'] }}" target={{$link['target']}}>
+                    <a class="flex__link button" href="{{ $link['url'] }}" target={{$link['target']}}>
                         {{ $link['title'] }}
                     </a>
                 </div>
+                <div class="flex_wrapperimg">
                 {!! image($img, 'full', 'flex__img') !!}
+                </div>
                 @endif
             </div>
             @endforeach

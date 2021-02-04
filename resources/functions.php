@@ -259,38 +259,37 @@ function create_posts()
 {
 
     register_post_type(
-        'Produkty',
+        'produkty',
         // CPT Options
         array(
             'labels' => array(
-                'name' => __ (pll__('Produkty')),
+                'name' => __ ('Produkty'),
                 'singular_name' => __('Produkty')
             ),
             'public' => true,
-            'has_archive' => true,
+            'has_archive' => false,
             'rewrite' => array('slug' => 'produkty'),
-            'supports' => array('title', 'thumbnail', 'excerpt', 'gallery', 'editor', 'category'),
             'show_in_rest' => true,
-            'menu_icon' => 'dashicons-admin-multisite',
+            'supports' => array('title', 'thumbnail', 'excerpt', 'gallery', 'editor', 'category'),
+            'menu_icon' => 'dashicons-cart',
             'taxonomies'  => array('category'),
         )
     );
 
     register_post_type(
-        'Realizacje',
+        'placowki',
         // CPT Options
         array(
             'labels' => array(
-                'name' => __(pll__('Realizacje')),
-                'singular_name' => __('Realizacje')
+                'name' => __('Placówki'),
+                'singular_name' => __('Placowki')
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'realizacje'),
-            'supports' => array('title','excerpt', 'thumbnail', 'gallery', 'editor', 'category'),
+            'rewrite' => array('slug' => 'placowki'),
             'show_in_rest' => true,
-            'menu_icon' => 'dashicons-admin-multisite',
-            'taxonomies'  => array('category'),
+            'supports' => array('title','excerpt', 'thumbnail', 'gallery', 'editor', 'category'),
+            'menu_icon' => 'dashicons-store',
         )
     );
 }

@@ -2,7 +2,7 @@
   $root: &;
 
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 
   &__image {
@@ -22,7 +22,7 @@
   }
 
   &__content {
-    max-width: gutter(62);
+    max-width: gutter(65);
     position: relative;
     z-index: 10;
     transform-origin: left top;
@@ -74,10 +74,10 @@
   }
 
   &__btn {
-    @extend .subtitle;
+    @extend .major-text;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: gutter(3.2) gutter(3.2);
     margin-left: gutter(1);
@@ -88,7 +88,7 @@
     color: $light;
     transition: $transition ease-in;
     font-weight: 400;
-    width: 330px;
+    width: 300px;
 
     svg {
       margin-left: gutter(1);
@@ -115,14 +115,16 @@
     }
   }
 
-  // &__items {
-  //   &:first-child {
-  //     #{$root}__btn {
-  //       padding-left: gutter(6.4);
-  //       clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
-  //     }
-  //   }
-  // }
+  &__items {
+    margin: 5px 0;
+
+    //   &:first-child {
+    //     #{$root}__btn {
+    //       padding-left: gutter(6.4);
+    //       clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+    //     }
+    //   }
+  }
 
   .flickity-slider {
     width: 100vw;

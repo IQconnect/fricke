@@ -29,33 +29,20 @@ const Gmap = {
         ).then(function (googleMaps) {
 
             let map;
-            if (pins[1]) {
-                map = new googleMaps.Map(elem, {
-                    center: {
-                        // lat: pins[0]['pin']['lat'],
-                        // lng: pins[0]['pin']['lng'],
-                        lat:52.3358379,
-                        lng: 18.8921266,
-                    },
-                    zoom: 7,
-                    keyboardShortcuts: false,
-                    styles: mapStyle,
-                });
-            }
 
-            else {
                 map = new googleMaps.Map(elem, {
                     center: {
                         // lat: pins[0]['pin']['lat'],
                         // lng: pins[0]['pin']['lng'],
-                        lat:51.9358379,
-                        lng: 16.8921266,
+                        lat:53.853231,
+                        lng: 21.2889702,
+
                     },
-                    zoom: 7,
+                    zoom: 8,
                     keyboardShortcuts: false,
                     styles: mapStyle,
                 });
-            }
+
 
             pins.forEach(element => {
                 const infoWindow = new google.maps.InfoWindow({

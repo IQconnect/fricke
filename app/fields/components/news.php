@@ -7,6 +7,6 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $news = new FieldsBuilder('news');
 
 $news
-->addRelationship('news', ['label'=>'Dodaj artykuły', 'post_type'=>'post' , 'min' => '3','max' => '3',]);
+->addRelationship('news', ['label'=>'Dodaj artykuły', 'post_type'=>'post' , 'min' => '3','max' => '9',]);
 
 return $news;

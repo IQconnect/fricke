@@ -24,11 +24,6 @@
       display: none;
     }
 
-    span {
-      width: 100%;
-      display: block;
-    }
-
     input,
     textarea {
       @extend .text;
