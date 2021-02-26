@@ -65,7 +65,7 @@ const Gmap = {
                     infoWindow.open(map2, pin);
                 });
 
-                console.log(pin);
+                 console.log(pin);
             });
 
         }).catch(function (error) {

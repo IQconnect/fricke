@@ -1,14 +1,14 @@
-// .preloader {
-//   width: 100%;
-//   height: 100vh;
-//   position: fixed;
-//   z-index: 1000;
-//   background-color: $light;
-//   transition: $transition;
-//   transition-delay: $transition;
+.preloader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  background-color: $light;
+  transition: 0.4s;
+  transition-delay: 0.4s;
 
-//   &--hide {
-//     opacity: 0;
-//     pointer-events: none;
-//   }
-// }
+  &--hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

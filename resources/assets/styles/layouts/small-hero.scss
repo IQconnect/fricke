@@ -50,6 +50,9 @@
   &__cell {
     @extend %overlay;
 
+    width: 100%;
+    height: 300px;
+
     @include mediaTo(sm) {
       &::after {
         display: none;

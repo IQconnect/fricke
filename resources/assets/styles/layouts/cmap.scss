@@ -1,6 +1,12 @@
 .cmap {
   &__wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: gutter(3);
+
+    @include mediaTo(md) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__map {
@@ -12,8 +18,9 @@
   &__info {
     display: block;
     background-color: $special;
+    width: 500px;
     padding: gutter(3) gutter(3);
-    grid-column-start: 3;
+    //grid-column-start: 3;
     box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.6);
 
     @include mediaTo(md) {

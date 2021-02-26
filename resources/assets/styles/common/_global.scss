@@ -58,20 +58,20 @@ button {
   }
 }
 
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $light;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  transition: 0.3s ease-out;
+// .preloader {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-color: $light;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 999;
+//   transition: 0.3s ease-out;
 
-  &--hide {
-    opacity: 0;
-    pointer-events: none;
-  }
-}
+//   &--hide {
+//     opacity: 0;
+//     pointer-events: none;
+//   }
+// }
