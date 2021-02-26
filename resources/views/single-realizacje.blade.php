@@ -20,7 +20,7 @@
         <!-- Opis -->
         <div class="s-realization__col">
           <h3 class="s-realization__title major-text major-text--special">
-            {{ __('Opis', 'Tomplast') }}
+            {{ __('Opis', '') }}
           </h3>
           <div class="text">
             {!! $dsc !!}
@@ -32,7 +32,7 @@
         <!-- Zakres -->
         <div class="s-realization__col">
           <h3 class="s-realization__title major-text major-text--special">
-            {{ __('Zakres', 'Tomplast') }}
+            {{ __('Zakres', '') }}
           </h3>
           <div class="text">
             {!! $range !!}
@@ -44,7 +44,7 @@
         <!-- Produkty -->
         <div class="s-realization__col">
           <h3 class="s-realization__title major-text major-text--special">
-            {{ __('Produkty', 'Tomplast') }}
+            {{ __('Produkty', '') }}
           </h3>
           <div class="text">
             {!! $products !!}
@@ -54,7 +54,7 @@
     </div>
     @if($gallery)
     <h3 class="s-realization__title major-text major-text--special">
-      {{ pll_e('Galeria') }}
+      {{ 'Galeria' }}
     </h3>
       <ul class="s-realization__gallery gallery-box">
         @foreach($gallery as $item)

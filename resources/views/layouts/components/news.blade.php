@@ -1,16 +1,19 @@
 @php
   $news = $data['news'];
+  $title = $data['news_title'];
+  $link = $data['news_link'];
+  $link_title = $data['news_link_title'];
 @endphp
 
 @if($news)
   <section class="news">
     <header class="news__header">
-      <h2 class="news__title subtitle">
-        {{ pll_e('Aktualności')}}
+      <h2 class="news__title title">
+        {!! $title !!}
             </h2>
-      <a class="news__btn button button--transparent button--red"
-        href="{{ get_post_type_archive_link( 'posts' ) }}">
-        {{ pll_e('Zobacz wszystkie')}}
+      <a class="news__btn button  button--red"
+        href="{{  $link['url'] }}">
+        {!! $link_title !!}
       </a>
     </header>
     <div class="news-carousel">
@@ -27,9 +30,9 @@
           <a class="news__cellcontent" href="{{ $permalink }}">
               {!! image($img, 'realization', 'news__img') !!}
             <div class="news__content">
-              <span class="news__count major-text">
+              {{-- <span class="news__count major-text">
                 {{ $loop->index + 1 }}
-              </span>
+              </span> --}}
               <h3 class="news__name major-text">
                 {{ $title }}
               </h3>

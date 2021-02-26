@@ -24,6 +24,11 @@
         margin-top: -10px;
         opacity: 0.8;
       }
+
+      #{$root}__playtitle {
+        margin-top: -10px;
+        opacity: 0.8;
+      }
     }
   }
 
@@ -54,6 +59,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition: $transition;
+  }
+
+  &__playtitle {
+    @include cssLock("font-size", 360, 1920, (gutter_num(2.2), gutter_num(4)));
+    @include cssLock("height", 360, 1750, (60, 100));
+
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    color: $dark;
+    z-index: 999;
+    font-weight: 700;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    transition: $transition;
+    text-transform: uppercase;
   }
 
   .flickity-button-icon {

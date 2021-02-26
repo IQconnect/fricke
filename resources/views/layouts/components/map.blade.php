@@ -14,7 +14,7 @@
   $pinsJSON = json_encode($pinsArray);
 @endphp
 
-<div class="map" id="google-map" google-map data-pins="{{ $pinsJSON }}"></div>
+<div class="map" id="google-map2" google-map2 data-pins="{{ $pinsJSON }}"></div>
 
 {{-- @dump($pins)
 @dump($pinsArray) --}}

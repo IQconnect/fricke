@@ -22,10 +22,12 @@
   }
 
   &__content {
-    max-width: gutter(65);
+    max-width: gutter(80);
     position: relative;
     z-index: 10;
     transform-origin: left top;
+    //background-color: rgba(255, 255, 255, 0.4);
+    //padding: gutter(1);
 
     @include mediaTo(sm) {
       background-color: rgba(255, 255, 255, 0.5);
@@ -37,6 +39,7 @@
     color: $special-dark;
     margin-bottom: gutter(1);
     font-weight: 800;
+    text-transform: uppercase;
   }
 
   &__text {
@@ -87,7 +90,7 @@
     text-transform: uppercase;
     color: $light;
     transition: $transition ease-in;
-    font-weight: 400;
+    font-weight: 600;
     width: 300px;
 
     svg {

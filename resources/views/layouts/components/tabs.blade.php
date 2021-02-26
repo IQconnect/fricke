@@ -30,8 +30,8 @@
             @endphp
             <div class="tabs__content @if($loop->first) -is-active @endif" data-tab-content>
                 <div class="tabs__wrapimg">
-                {!! image($img, 'full', 'tabs__img') !!}
-                </div>
+                    {!! image($img, 'full', 'tabs__img') !!}
+                    </div>
                 <div>
                     <h3 class="tabs__title title">
                         {!! $title !!}
@@ -44,6 +44,7 @@
                         {{ $link['title'] }}
                     </a>
                 </div>
+
 
                 @endif
             </div>

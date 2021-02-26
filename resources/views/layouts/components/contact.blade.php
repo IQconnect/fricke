@@ -1,3 +1,9 @@
+@php
+$class = "contact__content";
+$content = option("contact-contact");
+$title = option("contact-header");
+@endphp
+
 <section class="section contact">
   <div class="container">
     <div class="contact__wrapper">
@@ -6,14 +12,9 @@
       </div>
       <div class="contact__info">
         <h3 class="contact__title major-text">
-          {{ pll_e('info') }}
+          {!! $title!!}
         </h3>
-        @php
-          $class = "contact__content";
-          $content = option("contact-contact");
-        @endphp
-
-        <div class="{{ $class }}">
+        <div class="contact__content">
           {!! $content !!}
         </div>
       </div>

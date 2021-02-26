@@ -3,13 +3,13 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: gutter(3);
     list-style: none;
     margin: 0;
     padding: 0;
 
-    @include mediaTo(sm) {
+    @include mediaTo(md) {
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -27,6 +27,15 @@
       // #{$root}__img-wrapper {
       //   padding-top: 55%;
       // }
+      #{$root}__title {
+        color: $special;
+        padding-left: gutter(3.8);
+
+        &::before {
+          opacity: 1;
+          left: gutter(0.8);
+        }
+      }
 
       #{$root}__img {
         transform: scale(1.2);
@@ -38,6 +47,7 @@
     position: relative;
     transition: $transition ease-out;
     overflow: hidden;
+    height: 450px;
   }
 
   &__img {
@@ -48,9 +58,30 @@
 
   &__title {
     @extend %special;
+    @extend .major-text;
 
-    padding: gutter(1);
-    text-align: center;
+    position: relative;
+    padding: gutter(2) gutter(3.2);
+    font-weight: 800;
+    display: flex;
+    text-align: left;
+    text-transform: uppercase;
+    transition: $transition ease-in;
     background-color: $light;
+
+    &::before {
+      @extend %absolute;
+
+      content: url("../images/arrow-red.svg");
+      right: unset;
+      left: gutter(0.2);
+      top: gutter(0.2);
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      transform: scale(0.8);
+      opacity: 0;
+      transition: $transition ease-in;
+    }
   }
 }

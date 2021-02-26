@@ -16,7 +16,7 @@
                         {{ $item -> name }}
                     </h3>
                     <span class="cats__button button button--transparent button--red">
-                        {{ pll_e('Zobacz produkty')}}
+                        {{ 'Zobacz produkty'}}
                     </span>
                     {!! image($img, 'full', 'cats__img') !!}
                 </a>

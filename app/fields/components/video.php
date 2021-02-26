@@ -12,8 +12,10 @@ $config = (object) [
 $video = new FieldsBuilder('video', ['label' => 'Video']);
 
 $video
+->addtext('video_title', ['label'=>'Tytuł sekcji'])
 ->addRepeater('videos')
     ->addImage('image', ['label' => 'Tło'])
-    ->addLink('link', ['label' => 'Link']);
+    ->addLink('link', ['label' => 'Link'])
+    ->addText('video_name', ['label'=>'Tytuł video']);
 
 return $video;

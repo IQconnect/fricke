@@ -1,5 +1,13 @@
+@php
+$projects = $data['placowki'];
+$title = $data['placowki_title'];
+@endphp
+
 @if($projects)
   <section class="section projects">
+    <h2 class="news__title title">
+      {!! $title !!}
+          </h2>
     <div class="container">
       <ul class="projects__list">
         @foreach($projects as $item)

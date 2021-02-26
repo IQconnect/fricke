@@ -25,18 +25,22 @@
   content: "";
 }
 
+%bar {
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 6px;
+    width: 25px;
+    background-color: $special;
+    margin-right: 5px;
+  }
+}
+
 %overlay {
   &::after {
     @extend %pseudo;
 
-    background:
-      linear-gradient(
-        90deg,
-        rgba($light, 0.3) 0%,
-        rgba($light, 0.3) 10%,
-        rgba($light, 0.3) 70%
-        rgba($light, 0.3) 100%
-      );
+    background: linear-gradient(90deg, rgba($light, 0.3) 0%, rgba($light, 0.3) 10%, rgba($light, 0.3) 70% rgba($light, 0.3) 100%);
     width: 100%;
     height: 100%;
     pointer-events: none;
@@ -45,12 +49,7 @@
 
   &--bottom {
     &::after {
-      background:
-        linear-gradient(
-          0deg,
-          rgba($dark, 1) 0%,
-          rgba($dark, 0) 70%
-        );
+      background: linear-gradient(0deg, rgba($dark, 1) 0%, rgba($dark, 0) 70%);
     }
   }
 }

@@ -1,13 +1,37 @@
-@extends('layouts.posted')
+@extends('layouts.app')
 
-  @section('news')
+@section('content')
+@php
 
-  @php $sections = get_field('components') @endphp
+$img = get_field('hero', $current->taxonomy.'_'.$current->term_id);
 
-  @if($sections)
-    @foreach ($sections as $section)
-      @php ($sectionName = $section['acf_fc_layout']) @endphp
-        @include('layouts.components.' . $sectionName, ['data'=>$section])
-    @endforeach
-  @endif
+if(!$img)  $img = option('placowki')['img'];
+//$hero_title =  single_cat_title("",false) ;
+$hero = [
+  'img' => $img,
+  'content' => ['title'=>$hero_title],
+];
+
+@endphp
+
+@include('layouts.components.small-hero', ['data'=>$hero])
+<section class="section">
+
+  <div class="container">
+    @if (!have_posts())
+    <div class="alert alert-warning">
+        {{ __('Sorry, no results were found.', 'sage') }}
+    </div>
+    {!! get_search_form(false) !!}
+    @endif
+    <h2 class="blog__header title">
+      {{ single_cat_title("",false) }}
+    </h2>
+    <div class="blog blog--all">
+      @while (have_posts()) @php the_post() @endphp
+        @include('blog.posts')
+      @endwhile
+    </div>
+  </div>
+</section>
 @endsection

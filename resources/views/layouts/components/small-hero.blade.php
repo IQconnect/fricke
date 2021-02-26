@@ -16,8 +16,10 @@
 @if($small_hero || $on)
   <section class="small-hero">
     <div class="small-hero__cell">
+      @if($img)
       <img src="{{ $img['url'] }}" alt="{{ $title }}" class="small-hero__image"
         data-0="object-position:0 0" data-500="object-position:0 10px">
+        @endif
       <div class="small-hero__wrapper container" data-0="transform:scale(1); opacity: 1;"
         data-500="transform:scale(0.4); opacity: 0;">
         <div class="small-hero__content">

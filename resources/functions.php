@@ -20,6 +20,7 @@ $sage_error = function ($message, $subtitle = '', $title = '') {
     wp_die($message, $title);
 };
 
+
 /**
  * Ensure compatible version of PHP is used
  */
@@ -92,6 +93,10 @@ Container::getInstance()
     }, true);
 
 
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
 /**
  * ADD ACF OPTION PAGE
  */
@@ -117,7 +122,7 @@ function the_breadcrumb()
         echo home_url();
         //echo get_option('home');
         echo '" class="breadcramps__elem body link">';
-        echo pll_e('Strona Główna');
+        echo 'Strona Główna';
         echo '</a>';
         echo '</li>';
 
@@ -316,25 +321,3 @@ function replace_ws($str)
 {
     return str_replace(' ', '_', $str);
 }
-
-
-add_action('init', function() {
-    pll_register_string('Nasze Realizajce', 'Nasze Realizajce');
-    pll_register_string('Zobacz wszystkie', 'Zobacz wszystkie');
-    pll_register_string('Galeria', 'Galeria');
-    pll_register_string('Zobacz produkty', 'Zobacz produkty');
-    pll_register_string('Produkty', 'Produkty');
-    pll_register_string('Realizacje', 'Realizacje');
-    pll_register_string('Strona Główna', 'Strona Główna');
-    pll_register_string('Katalog Produktów', 'Katalog Produktów');
-    pll_register_string('kontakt', 'kontakt');
-    pll_register_string('siedziba', 'siedziba');
-    pll_register_string('odział', 'odział');
-    pll_register_string('zaklad', 'zaklad');
-    pll_register_string('info', 'info');
-    pll_register_string('firma-czynna', 'firma-czynna');
-    pll_register_string('firma-open', 'firma-open');
-    pll_register_string('firma-close', 'firma-close');
-    //Firma czynna od poniedziałku do piątku w godzinach 8-16<br>Aktualnie:
-    // Firma otwarta jeszcze przez
-});

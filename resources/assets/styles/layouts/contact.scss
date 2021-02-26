@@ -4,119 +4,125 @@
     grid-template-columns: 7fr 1fr 4fr;
     gap: gutter(3);
 
-    @include mediaTo(sm) {
+    @include mediaTo(md) {
       grid-template-columns: 1fr;
     }
   }
 
-  form {
-    & > p {
-      display: grid;
-      gap: gutter(2.4);
+  &__form {
+    .wpforms-field-container {
       grid-template-columns: 1fr 1fr;
+      display: grid;
+      gap: gutter(1.4);
 
-      @include mediaTo(sm) {
+      @include mediaTo(md) {
         grid-template-columns: 1fr;
       }
-    }
 
-    br {
-      display: none;
-    }
-
-    input,
-    textarea {
-      @extend .text;
-
-      width: 100%;
-      padding: gutter(2) gutter(3);
-      border: 0;
-      background-color: $light;
-      box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1);
-      outline-color: $special;
-    }
-
-    textarea {
-      height: gutter(20);
-    }
-
-    .your-email,
-    .your-message {
-      grid-column: span 2;
-
-      @include mediaTo(sm) {
-        grid-column: auto;
+      :focus {
+        outline: 2px solid $special !important;
       }
     }
 
-    .wpcf7-not-valid-tip {
-      @extend .small-title;
+    form {
+      br {
+        display: none;
+      }
 
-      padding: gutter(1) 0;
-    }
-
-    button {
-      @extend .button;
-      @extend .button--red;
-
-      transform: none !important;
-
-      @include mediaTo(sm) {
+      span {
         width: 100%;
+        display: block;
       }
-    }
 
-    label {
-      @extend .minor-text;
+      input,
+      textarea {
+        @extend .text;
 
-      padding: gutter(1) 0;
-      padding-left: gutter(3);
-      line-height: gutter(2.4);
-      user-select: none;
-    }
+        font-family: "Open Sans", sans-serif !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: gutter(3) gutter(3) !important;
+        border: 0 !important;
+        background-color: $light !important;
+        box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.1) !important;
+      }
 
-    .form__checkbox-wrapper {
-      margin-bottom: gutter(2.4);
-      position: relative;
-    }
+      textarea {
+        height: gutter(20) !important;
+      }
 
-    .form__checkbox {
-      position: absolute;
-      left: 0;
-      opacity: 0;
+      .contact__email,
+      .contact__messeage,
+      .contact__checkbox {
+        grid-column: span 2 !important;
 
-      &:checked + div {
-        &::after {
-          background-color: $special;
+        @include mediaTo(md) {
+          grid-column: auto !important;
         }
       }
-    }
 
-    .form__checkbox-elem {
-      left: 0;
-      top: gutter(0.3);
-      position: absolute;
-      display: block;
-      width: gutter(2);
-      height: gutter(2);
-      border: gutter(0.1) solid $gray;
-      background-color: $light;
-      pointer-events: none;
-
-      &::after {
-        @extend %absolute;
-
-        content: "";
-        background-color: $light;
-        width: 40%;
-        height: 40%;
+      .contact__checkbox {
+        input {
+          width: auto !important;
+        }
       }
-    }
 
-    .wpcf7-response-output {
-      @extend .small-title;
+      button {
+        @extend .small-title;
 
-      padding: gutter(1) 0;
+        padding: gutter(2) gutter(3.2) !important;
+        position: relative !important;
+        color: $light !important;
+        border: gutter(0.1) solid transparent !important;
+        cursor: pointer !important;
+        transition: $transition ease-in !important;
+        display: inline-block !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0 !important;
+        background-color: $special !important;
+
+        &::before {
+          @extend %absolute;
+
+          content: url("../images/arrow-red.svg");
+          right: unset !important;
+          left: gutter(0.2) !important;
+          top: gutter(0.2) !important;
+          display: flex !important;
+          justify-self: center !important;
+          align-items: center !important;
+          transform: scale(0.8) !important;
+          opacity: 0 !important;
+          transition: $transition ease-in !important;
+        }
+
+        &:hover {
+          background-color: $light !important;
+          color: $special !important;
+          border: 1px solid $special !important;
+          padding-left: gutter(3.8) !important;
+          padding-right: gutter(2.6) !important;
+
+          &::before {
+            opacity: 1 !important;
+            left: gutter(0.8) !important;
+          }
+        }
+
+        @include mediaTo(sm) {
+          width: 100%;
+        }
+      }
+
+      label {
+        @extend .minor-text;
+
+        padding: gutter(1) 0;
+        padding-left: gutter(3);
+        line-height: gutter(2.4);
+        user-select: none;
+      }
     }
   }
 
@@ -127,7 +133,7 @@
     grid-column-start: 3;
     box-shadow: 0 gutter(0.6) gutter(1.2) rgba($dark, 0.6);
 
-    @include mediaTo(sm) {
+    @include mediaTo(md) {
       grid-column-start: auto;
     }
   }

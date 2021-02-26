@@ -14,7 +14,7 @@
         </a>
     </li>
     @endforeach--}}
-    <?php pll_the_languages($attr); ?>
+    <?php //pll_the_languages($attr); ?>
 </ul>
 
 @endif

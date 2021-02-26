@@ -7,7 +7,8 @@
 @endphp
 
 @php
-$result = pll_home_url($lang);
+$result = get_home_url();
+//$result = pll_home_url($lang);
 @endphp
 
 <header class="header" data-header>

@@ -46,6 +46,8 @@
   }
 
   &__title {
+    @extend %bar;
+
     @include cssLock(
       "margin-bottom",
       360,
@@ -53,8 +55,10 @@
       (gutter_num(1.6), gutter_num(3.2))
     );
 
-    text-transform: capitalize;
+    display: flex;
+    align-items: center;
     font-weight: 800;
+    text-transform: uppercase;
     color: $special-dark;
   }
 

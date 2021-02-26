@@ -1,5 +1,5 @@
 @php
-  $team = option('team');
+  $team = $data['team'];
 @endphp
 @if($team)
   <section class="section team">
@@ -18,20 +18,29 @@
                 <li class="team__col text">
                   <span class="team__name"> {{ $content['name'] }} </span>
                   <span class="team__job"> {{ $content['job'] }} </span>
+                  @if($content['numer'])
                   <span class="team__tel">
-                    T: <a
+                    Telefon: <a
                       href="tel:{{ replace_ws($content['numer']) }}">{{ $content['numer'] }}</a>
                   </span>
+                  @endif
+                  @if($content['mail'])
                   <span class="team__tel">
-                    E: <a
+                    Email: <a
                       href="mailto:{{ replace_ws($content['mail']) }}">{{ $content['mail'] }}</a>
                   </span>
-                  @if($content['card']['url'])
+                  @endif
+                  @if($content['powiat'])
+                  <span class="team__tel">
+                    Powiat: {{ $content['powiat'] }}
+                  </span>
+                  @endif
+                  {{--  @if($content['card']['url'])
                     <a class="team__link"
                       href="{{ $content['card']['url'] }}">
                       <span class="team__icon fas fa-download"></span>
                     </a>
-                  @endif
+                  @endif  --}}
                 </li>
               @endforeach
             </ul>

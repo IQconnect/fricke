@@ -4,7 +4,7 @@ const loadGoogleMapsApi = require('load-google-maps-api')
 import mapStyle from '../util/mapStyle';
 
 const CONFIG = {
-    ELEM: '[google-map]',
+    ELEM: '[google-map2]',
 };
 
 const Gmap = {
@@ -28,9 +28,9 @@ const Gmap = {
             { 'key': 'AIzaSyDqX_hqXzx0uZS2NcENrA2fkutTyXOHpMo', }
         ).then(function (googleMaps) {
 
-            let map;
+            let map2;
 
-                map = new googleMaps.Map(elem, {
+                map2 = new googleMaps.Map(elem, {
                     center: {
                         // lat: pins[0]['pin']['lat'],
                         // lng: pins[0]['pin']['lng'],
@@ -56,13 +56,13 @@ const Gmap = {
                         lat: Number(element.pin.lat),
                         lng: Number(element.pin.lng),
                     },
-                    map: map,
+                    map: map2,
                     title: element.title,
                     icon: image,
                 });
 
                 googleMaps.event.addListener(pin, 'click', function () {
-                    infoWindow.open(map, pin);
+                    infoWindow.open(map2, pin);
                 });
 
                 console.log(pin);
